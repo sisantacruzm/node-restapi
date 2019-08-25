@@ -26,5 +26,5 @@ mongoose.connect(process.env.URLDB,
 })
 
 app.listen(process.env.PORT, () => {
-    console.log("escuchando el puerto", process.env.PORT)
+    console.log("Escuchando el puerto", process.env.PORT, "Conectado a la BD", process.env.URLDB)
 })
