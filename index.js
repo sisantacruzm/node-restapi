@@ -1,2 +1,2 @@
 
-console.log('Procesando...!');
+require('./server/server')
