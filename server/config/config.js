@@ -47,3 +47,9 @@ process.env.URLDB = urlDB
 // ===============================
 
 process.env.PORT = process.env.PORT || 3000;
+
+// ===============================
+// Google ClientID
+// ===============================
+
+process.env.CLIENT_ID = process.env.CLIENT_ID || '193216986521-rq7ts263q08drd3bgvpnu64rc1mgqcd7.apps.googleusercontent.com'
