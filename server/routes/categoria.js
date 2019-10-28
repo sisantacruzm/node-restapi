@@ -2,7 +2,7 @@ const express = require('express')
 
 const Categoria = require('../models/categoria')
 
-const { verificaToken, virificaAdmin_Role } = require('../middlewares/autenticacion')
+const { verificaToken, verificaAdmin_Role } = require('../middlewares/autenticacion')
 
 const app = express()
 
@@ -128,7 +128,7 @@ app.put('/categoria/:id', verificaToken, (req, res) => {
 })
 
 // Borrar Categoria por ID
-app.delete('/categoria/:id', [verificaToken, virificaAdmin_Role], (req, res) => {
+app.delete('/categoria/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
 
   let id = req.params.id
 

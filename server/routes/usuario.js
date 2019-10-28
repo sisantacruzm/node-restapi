@@ -5,7 +5,7 @@ const _ = require('underscore')
 
 const Usuario = require('../models/usuario')
 
-const { verificaToken, virificaAdmin_Role } = require('../middlewares/autenticacion')
+const { verificaToken, verificaAdmin_Role } = require('../middlewares/autenticacion')
 
 const app = express()
 
@@ -44,7 +44,7 @@ app.get('/usuario', verificaToken, (req, res) => {
 })
   
 // Crear un nuevo usuario
-app.post('/usuario', [verificaToken, virificaAdmin_Role], (req, res) => {
+app.post('/usuario', [verificaToken, verificaAdmin_Role], (req, res) => {
 
     let body = req.body 
 
@@ -75,7 +75,7 @@ app.post('/usuario', [verificaToken, virificaAdmin_Role], (req, res) => {
 })
 
 // Actualizar un usuario por su ID
-app.put('/usuario/:id', [verificaToken, virificaAdmin_Role], (req, res) => {
+app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
   
   let id = req.params.id
   let body = _.pick( req.body, ['nombre','email', 'img', 'role', 'estado'] )
@@ -102,7 +102,7 @@ app.put('/usuario/:id', [verificaToken, virificaAdmin_Role], (req, res) => {
 })
 
 // Deshabiltiar un Usuario por ID
-app.delete('/usuario/:id', [verificaToken, virificaAdmin_Role], (req, res) => {
+app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], (req, res) => {
   
   let id = req.params.id
 
